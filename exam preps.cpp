@@ -46,21 +46,37 @@
 //	if (ans == -1) cout << "no such";
 //	else cout << ans;
 //} 
+//#include <iostream>
+//using namespace std;
+//bool is_fib(int n){
+//	int temp1 = 1,temp2=1;
+//	if (n == 0 || n == 1) return 1;
+//	for (int k = n,temp3; k <= n; k = temp3) {
+//		temp3 = temp1 + temp2;
+//		temp1 = temp2;
+//		temp2 = temp3;
+//
+//		if (n == temp3) return true;
+//	}
+//	return false;
+//}
+//int main() {
+//	int n; cin >> n;
+//	cout<<is_fib(n);
+//}
 #include <iostream>
-using namespace std;
-bool is_fib(int n){
-	int temp1 = 1,temp2=1;
-	if (n == 0 || n == 1) return 1;
-	for (int k = n,temp3; k <= n; k = temp3) {
-		temp3 = temp1 + temp2;
-		temp1 = temp2;
-		temp2 = temp3;
+#include <numeric>
 
-		if (n == temp3) return true;
-	}
-	return false;
+using namespace std;
+int numN(int n, int k) {
+	int l = 0;
+	int reversed = 0;
+	for (int temp = k; temp != 0; temp /= 10, l++);
+	for (; k != 0;  reversed = reversed * 10 + k % 10,k /= 10);
+	return ((reversed / int(pow(10, l - n))) % 10);
 }
 int main() {
-	int n; cin >> n;
-	cout<<is_fib(n);
+	int n,k; cin >> k>>n;
+	cout << numN(n, k);
+	
 }
