@@ -1,82 +1,132 @@
-﻿//#include <iostream>
-//using namespace std;
-//bool is_poly(int n) {
-//	int reversed = 0;
-//	int temp = n;
-//	while (temp != 0) {
-//		reversed = reversed * 10 + temp % 10;
-//		temp /= 10;
-//	}
-//	return reversed== n;
-//}
-//int main() {
-//	int n; cin >> n;
-//
-//}
-//#include <iostream>
-//using namespace std;
-//int len(int n) {
-//	int c = 0;
-//	if (n == 0) return 1;
-//	for (int temp = n; temp > 0; temp /= 10) {
-//		c++;
-//	}
-//	return c;
-//}
-//int numn(int k, int n) {
-//	int l = len(k);
-//	if (l < n) return -1;
-//	return ((k / (int(pow(10, l-n))))%10);
-//}
-//int main() {
-//	//int n,k; cin >> k>>n;
-//	//cout << numn(k, n);
-//	int n1, n2; cin >> n1 >> n2;
-// 	int** a = new int* [n1];
-//	int ans = -1, max = 0;
-//	for (int i = 0; i < n1; i++) {
-//		a[i] = new int[n2];
-//		int temp = 0;
-//		for (int j = 0; j < n2; j++) {
-//			cin >> a[i][j];
-//			if ((numn(a[i][j], 3)) != -1) temp += numn(a[i][j], 3);
-//		}
-//		if (temp > max) { max = temp; ans = i; }
-//	}
-//	if (ans == -1) cout << "no such";
-//	else cout << ans;
-//} 
-//#include <iostream>
-//using namespace std;
-//bool is_fib(int n){
-//	int temp1 = 1,temp2=1;
-//	if (n == 0 || n == 1) return 1;
-//	for (int k = n,temp3; k <= n; k = temp3) {
-//		temp3 = temp1 + temp2;
-//		temp1 = temp2;
-//		temp2 = temp3;
-//
-//		if (n == temp3) return true;
-//	}
-//	return false;
-//}
-//int main() {
-//	int n; cin >> n;
-//	cout<<is_fib(n);
-//}
 #include <iostream>
-#include <numeric>
-
+#include <string>
+#include <iterator>
 using namespace std;
-int numN(int n, int k) {
-	int l = 0;
-	int reversed = 0;
-	for (int temp = k; temp != 0; temp /= 10, l++);
-	for (; k != 0;  reversed = reversed * 10 + k % 10,k /= 10);
-	return ((reversed / int(pow(10, l - n))) % 10);
-}
-int main() {
-	int n,k; cin >> k>>n;
-	cout << numN(n, k);
-	
-}
+
+/*first task*/
+//int main() {
+//  string s;
+//  getline(cin, s);
+//  char c;
+//  cin >> c;
+//  s.insert(s.begin(), c);
+//  s.insert(s.end(), c);
+//  cout << s;
+//}
+
+
+/*second task*/
+//int main() {
+//  string s;
+//  getline(cin, s);
+//  for (int it = 1; it < s.length(); it += 2) {
+//    s[it]='X';
+//  }
+//  cout << s;
+//}
+
+
+/*third task*/
+//int main() {
+//	string s;
+//	getline(cin, s);
+//	int k;
+//	cin >> k;
+//	for (int i = 1; i < s.length()+1; i++) {
+//		if (i % k==0) {
+//			cout << s[i-1];
+//			cout << endl;
+//		}
+//		else {
+//			cout << s[i-1];
+//		}
+//	}
+//}
+
+
+
+// fourth task
+//int main() {
+//    string s;
+//    getline(cin, s);
+//    string result;
+//    int start = 0;
+//    for (int i = 0; i <= s.size(); ++i) {
+//        if (i == s.size() || s[i] == ' ') {
+//            string word = s.substr(start, i - start);
+//            if (word.size() > 1) {
+//                swap(word.front(), word.back());
+//            }
+//            result += word;
+//            if (i != s.size()) {
+//                result += ' ';
+//            }
+//            start = i + 1;
+//        }
+//    }
+//    cout << result;
+//}
+
+
+
+//fifth task
+//int main() {
+//	string s1, s2;
+//	int k;
+//	getline(cin, s1);
+//	getline(cin, s2);
+//	cin >> k;
+//	s1.insert(k,s2);
+//	s2.insert(k,s1);
+//	cout << s1 << endl << s2;
+//	
+//}
+
+
+/*sixth task*/
+//int main() {
+//    string s;
+//    getline(cin, s);
+//    string glas = "aeiouyAEIOUY";
+//    string result;
+//    for (char c : s) {
+//        if (glas.find(c) != -1) {
+//            result += '*';
+//        }
+//        result += c;
+//    }
+//    cout << result;
+//}
+
+/*seventh task*/
+//int main() {
+//    string s;
+//    getline(cin, s);
+//    string soglas = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ";
+//    string result;
+//    for (int i = 0; i < s.size(); ++i) {
+//        result += s[i];
+//        if (i % 2 != 0 && soglas.find(s[i]) != -1) {
+//            result += '#';
+//        }
+//    }
+//    cout << result;
+//}
+
+
+/*eighth task*/
+//int main() {
+//    string s;
+//    char separator;
+//    getline(cin, s);
+//    cin>>separator;
+//    string result;
+//    if (!s.empty()) {
+//        result += s[0];
+//        for (int i = 1; i < s.size(); ++i) {
+//            result += separator;
+//            result += s[i];
+//        }
+//    }
+//    cout << result;
+//}
